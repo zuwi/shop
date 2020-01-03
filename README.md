@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Starting Rails Server
+
+rails server
+
+## Starting Vue.js Server
+
+yarn dev
