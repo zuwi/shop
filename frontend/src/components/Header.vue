@@ -7,6 +7,7 @@
       <div>
         <router-link to="/" class="link-grey px-2 no-underline" v-if="!loggedIn()">Login</router-link>
         <router-link to="/registration" class="link-grey px-2 no-underline" v-if="!loggedIn()">Registration</router-link>
+        <router-link to="/brands" class="link-grey px-2 no-underline" v-if="loggedIn()">Brands</router-link>
         <router-link to="/items" class="link-grey px-2 no-underline" v-if="loggedIn()">Items</router-link>
         <a href="#" @click.prevent="logout" class="link-grey px-2 no-underline" v-if="loggedIn()">Logout</a>
       </div>

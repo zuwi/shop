@@ -23,6 +23,16 @@ Things you may want to cover:
 
 * ...
 
+## Installing Redis
+
+Install Redis
+
+sudo apt install redis-server
+
+Start Redis
+
+redis-server
+
 ## Starting Rails Server
 
 rails server

@@ -21,7 +21,7 @@ module Api
         @brand = Brand.new(brand_params)
 
         if @brand.save
-          render json: @brand, status: :created, location: @brand
+          render json: @brand, status: :created, location: @brands
         else
           render json: @brand.errors, status: :unprocessable_entity
         end

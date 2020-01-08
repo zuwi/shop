@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/components/Login.vue'
 import Registration from '@/components/Registration.vue'
 import Items from '@/components/items/Items.vue'
+import Brands from '@/components/brands/Brands.vue'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/items',
       name: 'Items',
       component: Items
+    },
+    {
+      path: '/brands',
+      name: 'Brands',
+      component: Brands
     }
   ]
 })

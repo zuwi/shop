@@ -6,7 +6,8 @@ module Api
 
       # GET /items
       def index
-        @items = current_user.records.all
+        #@items = current_user.items.all
+        @items = Item.all
 
         render json: @items
       end
@@ -18,10 +19,10 @@ module Api
 
       # POST /items
       def create
-        @item = current_user.records.build.new(item_params)
+        @item = current_user.items.build(item_params)
 
         if @item.save
-          render json: @item, status: :created, location: @item
+          render json: @item, status: :created, location: @items
         else
           render json: @item.errors, status: :unprocessable_entity
         end
@@ -44,7 +45,8 @@ module Api
       private
         # Use callbacks to share common setup or constraints between actions.
         def set_item
-          @item = current_user.records.find(params[:id])
+          #@item = current_user.items.find(params[:id])
+          @item = Item.find(params[:id])
         end
 
         # Only allow a trusted parameter "white list" through.
