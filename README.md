@@ -1,42 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install all dependencies with Docker
 
-Things you may want to cover:
+Install ruby, all ruby gems, node.js and yarn
 
-* Ruby version
+`docker-compose build`
 
-* System dependencies
+## Start the app with Docker
 
-* Configuration
+Start redis, rails and vue
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-## Installing Redis
-
-Install Redis
-
-sudo apt install redis-server
-
-Start Redis
-
-redis-server
-
-## Starting Rails Server
-
-rails server
-
-## Starting Vue.js Server
-
-yarn dev
+`docker-compose up`
