@@ -9,6 +9,12 @@
                placeholder="Type a brand name"
                v-model="newBrand.name" />
       </div>
+      <div class="mb-6" v-if="previewImage">
+        <img :src="previewImage" class="uploading-image" />
+      </div>
+      <div class="mb-6">
+        <input type="file" accept="image/jpeg" @change=uploadImage>
+      </div>
       <input type="submit" value="Add Brand" class="cursor-pointer no-underline block w-full py-4 items-center justify-center btn btn-blue" />
     </form>
 
@@ -56,7 +62,8 @@ export default {
       brands: [],
       newBrand: [],
       error: '',
-      editedBrand: ''
+      editedBrand: '',
+      previewImage: null
     }
   },
   created () {
@@ -103,6 +110,15 @@ export default {
     cancelEdit (brand) {
       this.editedBrand = ''
       Object.assign(brand, this.cachedBrand)
+    },
+    uploadImage (e) {
+      const image = e.target.files[0]
+      const reader = new FileReader()
+      reader.readAsDataURL(image)
+      reader.onload = e => {
+        this.previewImage = e.target.result
+        console.log(this.previewImage)
+      }
     }
   }
 }
