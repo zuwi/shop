@@ -11,8 +11,8 @@ COPY . ./
 ENV PATH /frontend/node_modules/.bin:$PATH
 
 # Install and cache app dependencies
-RUN yarn global add @vue/cli
-RUN yarn
+RUN npm install
+ENTRYPOINT ["npm", "run", "start"]
 
 # Expose port 8080 to the Docker host, so we can access it from the outside
 # EXPOSE 8080
